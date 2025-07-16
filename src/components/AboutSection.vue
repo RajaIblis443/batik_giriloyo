@@ -102,12 +102,16 @@ const partners = ref([
           data-aos-duration="1000"
           data-aos-easing="ease-in-out"
         >
-          <img
-            :src="aboutImage.src"
-            alt="Kampung Batik Giriloyo"
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            @error="($event.target as HTMLImageElement).src = aboutImage.fallback"
-          />
+          <picture>
+            <source :srcset="aboutImage.srcset" type="image/webp" :sizes="aboutImage.sizes" />
+            <img
+              :src="aboutImage.src"
+              alt="Kampung Batik Giriloyo"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              @error="($event.target as HTMLImageElement).src = aboutImage.fallback"
+              loading="lazy"
+            />
+          </picture>
         </div>
 
         <!-- Right Side - Text Content with AOS -->

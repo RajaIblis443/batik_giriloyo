@@ -1,12 +1,15 @@
 <template>
   <section id="beranda" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background Image with overlay -->
+    <!-- Background Image with overlay and WebP optimization -->
     <div class="absolute inset-0 z-0">
-      <img
-        :src="currentSlide.image"
-        :alt="currentSlide.title"
-        class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
-      />
+      <picture>
+        <source :srcset="currentSlide.imageSrcset" type="image/webp" sizes="100vw" />
+        <img
+          :src="currentSlide.image"
+          :alt="currentSlide.title"
+          class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+        />
+      </picture>
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
@@ -69,12 +72,23 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useOptimizedImages } from '@/composables/useOptimizedImages'
 
 // Set up image optimization
-const { getOptimizedImageUrl } = useOptimizedImages()
+const { getOptimizedImageUrl, createImage } = useOptimizedImages()
+
+// Generate srcset for an image
+const generateSrcSet = (path: string) => {
+  return [
+    `${path}?format=webp&width=640&quality=80 640w`,
+    `${path}?format=webp&width=1024&quality=80 1024w`,
+    `${path}?format=webp&width=1600&quality=80 1600w`,
+    `${path}?format=webp&width=2048&quality=80 2048w`,
+  ].join(', ')
+}
 
 interface Slide {
   title: string
   subtitle: string
   image: string
+  imageSrcset: string
 }
 
 const slides: Slide[] = [
@@ -83,17 +97,20 @@ const slides: Slide[] = [
     subtitle:
       'Melestarikan warisan budaya batik Giriloyo dengan sentuhan modern untuk generasi mendatang',
     image: getOptimizedImageUrl('/images/hero-1.png'),
+    imageSrcset: generateSrcSet('/images/hero-1.png'),
   },
   {
     title: 'Keahlian Turun Temurun',
     subtitle:
       'Setiap motif batik dibuat dengan teknik tradisional yang telah diwariskan lintas generasi',
     image: getOptimizedImageUrl('/images/hero-2.png'),
+    imageSrcset: generateSrcSet('/images/hero-2.png'),
   },
   {
     title: 'Kualitas Premium Bantul',
     subtitle: 'Batik berkualitas tinggi dari jantung budaya Yogyakarta dengan corak khas Giriloyo',
     image: getOptimizedImageUrl('/images/hero-3.png'),
+    imageSrcset: generateSrcSet('/images/hero-3.png'),
   },
 ]
 
