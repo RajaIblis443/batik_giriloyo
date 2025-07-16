@@ -10,14 +10,23 @@
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
-    <!-- Content -->
+    <!-- Content with AOS animations -->
     <div
       class="absolute bottom-20 left-4 md:left-8 z-10 text-left text-white max-w-2xl px-4 md:px-0"
     >
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+      <h1
+        class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         {{ currentSlide.title }}
       </h1>
-      <p class="text-sm md:text-base lg:text-lg mb-6 opacity-90 max-w-xl">
+      <p
+        class="text-sm md:text-base lg:text-lg mb-6 opacity-90 max-w-xl"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
         {{ currentSlide.subtitle }}
       </p>
     </div>
@@ -56,6 +65,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+// Import image optimization composable
+import { useOptimizedImages } from '@/composables/useOptimizedImages'
+
+// Set up image optimization
+const { getOptimizedImageUrl } = useOptimizedImages()
 
 interface Slide {
   title: string
@@ -68,18 +82,18 @@ const slides: Slide[] = [
     title: 'Mewarisi Tradisi Menulis Masa Depan',
     subtitle:
       'Melestarikan warisan budaya batik Giriloyo dengan sentuhan modern untuk generasi mendatang',
-    image: '/images/hero-1.png',
+    image: getOptimizedImageUrl('/images/hero-1.png'),
   },
   {
     title: 'Keahlian Turun Temurun',
     subtitle:
       'Setiap motif batik dibuat dengan teknik tradisional yang telah diwariskan lintas generasi',
-    image: '/images/hero-2.png',
+    image: getOptimizedImageUrl('/images/hero-2.png'),
   },
   {
     title: 'Kualitas Premium Bantul',
     subtitle: 'Batik berkualitas tinggi dari jantung budaya Yogyakarta dengan corak khas Giriloyo',
-    image: '/images/hero-3.png',
+    image: getOptimizedImageUrl('/images/hero-3.png'),
   },
 ]
 
