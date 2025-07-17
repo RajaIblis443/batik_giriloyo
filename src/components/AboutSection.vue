@@ -53,6 +53,7 @@ const partners = ref([
             <p class="text-gray-800 font-medium bg-white relative px-6">
               Dipercaya oleh Banyak Mitra
             </p>
+            <img src="/src/assets/Rectangle 7.svg" />
           </div>
         </div>
       </div>

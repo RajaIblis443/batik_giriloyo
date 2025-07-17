@@ -91,7 +91,7 @@ onMounted(() => {
         class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 mb-8 sm:mb-12"
         data-aos="fade-up"
       >
-        <div class="flex flex-col items-start gap-3 sm:gap-4">
+        <div class="flex items-start gap-3 sm:gap-4">
           <div class="bg-gray-100 px-4 py-2 sm:px-6 rounded-full">
             <span class="text-gray-700 font-medium text-sm sm:text-base">GALLERY</span>
           </div>
@@ -111,9 +111,9 @@ onMounted(() => {
       </div>
 
       <!-- Gallery Content -->
-      <div class="grid lg:grid-cols-3 gap-6 sm:gap-8" data-aos="fade-up" data-aos-delay="200">
+      <div class="grid lg:grid-cols-2 gap-6 sm:gap-8" data-aos="fade-up" data-aos-delay="200">
         <!-- Main Image -->
-        <div class="lg:col-span-2 order-2 lg:order-1">
+        <div class="lg:col-span-1 order-2 lg:order-1">
           <div class="bg-gray-50 rounded-2xl sm:rounded-3xl overflow-hidden relative group">
             <img
               :src="getOptimizedImageUrl(getCurrentImage())"
@@ -149,7 +149,7 @@ onMounted(() => {
         </div>
 
         <!-- Product Info -->
-        <div class="space-y-4 sm:space-y-6 order-1 lg:order-2">
+        <div class="space-y-4 sm:space-y-6 order-1 lg:order-2 lg:col-span-1">
           <div>
             <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               {{ galleryItems[activeItem].title }}
@@ -216,7 +216,19 @@ onMounted(() => {
           </div>
 
           <!-- Desktop Navigation -->
-          <div class="hidden lg:flex justify-end">
+          <div class="hidden lg:flex justify-between">
+            <!-- Dots Indicator -->
+            <div class="flex justify-center mt-8 gap-2" data-aos="fade-up" data-aos-delay="400">
+              <button
+                v-for="(item, index) in galleryItems"
+                :key="item.id"
+                @click="activeItem = index"
+                :class="[
+                  'w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200',
+                  activeItem === index ? 'bg-black' : 'bg-gray-300 hover:bg-gray-400',
+                ]"
+              />
+            </div>
             <div class="flex items-center gap-2">
               <button
                 @click="prevItem"
@@ -236,7 +248,7 @@ onMounted(() => {
       </div>
 
       <!-- Dots Indicator -->
-      <div class="flex justify-center mt-8 gap-2" data-aos="fade-up" data-aos-delay="400">
+      <div class="flex justify-center mt-8 gap-2 lg:hidden" data-aos="fade-up" data-aos-delay="400">
         <button
           v-for="(item, index) in galleryItems"
           :key="item.id"
@@ -252,6 +264,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+* {
+  border: 1px red solid;
+}
 /* Smooth image transitions */
 .image-transition {
   transition:

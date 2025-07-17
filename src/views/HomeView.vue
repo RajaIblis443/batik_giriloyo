@@ -5,6 +5,7 @@ import AboutSection from '@/components/AboutSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import TestimonialSection from '@/components/TestimonialSection.vue'
 import QuestionSection from '@/components/QuestionSection.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
@@ -24,4 +25,6 @@ import QuestionSection from '@/components/QuestionSection.vue'
 
     <QuestionSection />
   </main>
+
+  <Footer />
 </template>

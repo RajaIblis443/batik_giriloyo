@@ -15,43 +15,47 @@
 
     <!-- Content with AOS animations -->
     <div
-      class="absolute bottom-20 left-4 md:left-8 z-10 text-left text-white max-w-2xl px-4 md:px-0"
+      class="absolute flex justify-between items-end bottom-20 left-4 md:left-12 z-10 text-left text-white px-4 md:px-0 md:right-12"
     >
-      <h1
-        class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        {{ currentSlide.title }}
-      </h1>
-      <p
-        class="text-sm md:text-base lg:text-lg mb-6 opacity-90 max-w-xl"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-      >
-        {{ currentSlide.subtitle }}
-      </p>
+      <div class="max-w-2xl">
+        <h1
+          class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-anton"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          {{ currentSlide.title }}
+        </h1>
+      </div>
+      <div class="flex">
+        <button
+          @click="prevSlide"
+          class="z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 flex items-center justify-center text-white"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <button
+          @click="nextSlide"
+          class="z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 flex items-center justify-center text-white"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-
-    <!-- Navigation Arrows -->
-    <button
-      @click="prevSlide"
-      class="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 flex items-center justify-center text-white"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-
-    <button
-      @click="nextSlide"
-      class="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 flex items-center justify-center text-white"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
 
     <!-- Slide Indicators -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
@@ -148,6 +152,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+
 /* Smooth slide transitions */
 .slide-enter-active,
 .slide-leave-active {
