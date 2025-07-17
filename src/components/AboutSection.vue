@@ -48,9 +48,12 @@ const partners = ref([
       <div class="text-center">
         <div class="inline-block relative mb-8" data-aos="fade-up" data-aos-delay="300">
           <div class="w-full absolute h-[1px] bg-gray-300 top-1/2 transform -translate-y-1/2"></div>
-          <p class="text-gray-800 font-medium bg-white relative px-6">
-            Dipercaya oleh Banyak Mitra
-          </p>
+          <div class="flex gap-3 items-center justify-center">
+            <img src="/src/assets/rectangle-left.svg" />
+            <p class="text-gray-800 font-medium bg-white relative px-6">
+              Dipercaya oleh Banyak Mitra
+            </p>
+          </div>
         </div>
       </div>
 

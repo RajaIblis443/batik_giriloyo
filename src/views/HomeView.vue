@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import TestimonialSection from '@/components/TestimonialSection.vue'
+import QuestionSection from '@/components/QuestionSection.vue'
 </script>
 
 <template>
@@ -21,11 +22,6 @@ import TestimonialSection from '@/components/TestimonialSection.vue'
 
     <TestimonialSection />
 
-    <section id="faq" class="min-h-screen flex items-center justify-center bg-white">
-      <div class="text-center">
-        <h2 class="text-4xl font-bold mb-4">FAQ</h2>
-        <p class="text-xl text-gray-600">Section ini akan dikembangkan selanjutnya</p>
-      </div>
-    </section>
+    <QuestionSection />
   </main>
 </template>
