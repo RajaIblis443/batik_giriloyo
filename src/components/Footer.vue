@@ -15,7 +15,7 @@ const bantuan = ref([
 
 // Social media links
 const socialLinks = ref([
-  { name: 'Whatsapp', href: 'https://wa.me/6281234567890' },
+  { name: 'Whatsapp', href: 'https://wa.me/6282140651754' },
   { name: 'Instagram', href: 'https://instagram.com/batikgiriloyo' },
   { name: 'Telepon', href: 'tel:+6281234567890' },
 ])

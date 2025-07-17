@@ -264,9 +264,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-* {
-  border: 1px red solid;
-}
 /* Smooth image transitions */
 .image-transition {
   transition:

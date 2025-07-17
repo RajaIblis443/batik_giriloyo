@@ -32,7 +32,7 @@
           <button
             class="hidden md:flex items-center space-x-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-6 py-3 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50"
           >
-            <span class="font-medium">Hubungi Kami</span>
+            <a class="font-medium" href="https://wa.me/6282140651754">Hubungi Kami</a>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -44,7 +44,7 @@
           </button>
 
           <!-- Mobile menu button -->
-          <button @click="toggleMobileMenu" class="md:hidden text-white p-2">
+          <button @click="toggleMobileMenu" class="md:hidden text-white p-2 m-2">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -65,10 +65,7 @@
             :key="item.name"
             :href="item.href"
             class="text-white hover:text-amber-400 transition-colors duration-300 font-medium py-2"
-            @click="
-              scrollToSection(item.href);
-              toggleMobileMenu()
-            "
+            @click="(scrollToSection(item.href), toggleMobileMenu())"
           >
             {{ item.name }}
           </a>
