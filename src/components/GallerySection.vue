@@ -28,23 +28,7 @@ const galleryItems = ref([
       'Motif Parang melambangkan kekuatan dan keberanian dalam menghadapi tantangan hidup.',
     price: 'Rp 450.000',
     mainImage: '/images/kampung-batik-parang.jpg',
-    thumbnails: [
-      '/images/kampung-batik-parang-1.jpg',
-      '/images/kampung-batik-parang-2.jpg',
-      '/images/kampung-batik-parang-3.jpg',
-    ],
-  },
-  {
-    id: 3,
-    title: 'Motif Batik Truntum',
-    description: 'Motif Truntum melambangkan cinta kasih yang tulus dan kesetiaan dalam hubungan.',
-    price: 'Rp 420.000',
-    mainImage: '/images/kampung-batik-truntum.jpg',
-    thumbnails: [
-      '/images/kampung-batik-truntum-1.jpg',
-      '/images/kampung-batik-truntum-2.jpg',
-      '/images/kampung-batik-truntum-3.jpg',
-    ],
+    thumbnails: ['/images/kampung-batik-parang-1.jpg'],
   },
 ])
 
