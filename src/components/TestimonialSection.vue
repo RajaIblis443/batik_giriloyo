@@ -8,18 +8,18 @@ import 'aos/dist/aos.css'
 const testimonials = ref([
   {
     id: 1,
-    name: 'Sarah Wijaya',
+    name: 'Hafidz Fadilah',
     role: 'Pelanggan Setia',
-    avatar: '/images/avatar-1.jpg',
+    avatar: '/images/hafidz-fadilah.jpg',
     content:
       'Batiknya sangat halus dan nyaman dipakai. Saya suka karena motifnya klasik, tapi tetap cocok untuk acara formal maupun santai. Kualitasnya juara!',
     rating: 5,
   },
   {
     id: 2,
-    name: 'Ahmad Pratama',
+    name: 'Farel Master Of Ui/Ux',
     role: 'Kolektor Batik',
-    avatar: '/images/avatar-2.jpg',
+    avatar: '/images/farel-haryanto.jpg',
     content:
       'Setiap motif memiliki cerita yang mendalam. Proses pembuatannya yang handmade membuat setiap piece unik. Sangat puas dengan kualitas dan pelayanannya.',
     rating: 5,
@@ -28,16 +28,16 @@ const testimonials = ref([
     id: 3,
     name: 'Dini Ramadhani',
     role: 'Fashion Enthusiast',
-    avatar: '/images/avatar-3.jpg',
+    avatar: '/images/arga.jpg',
     content:
       'Warna-warnanya natural dan tahan lama. Sudah berkali-kali dicuci tapi tetap bagus. Cocok banget untuk yang mencari batik berkualitas tinggi.',
     rating: 5,
   },
   {
     id: 4,
-    name: 'Budi Santoso',
+    name: 'Bagas si Raja Iblis',
     role: 'Pengusaha',
-    avatar: '/images/avatar-4.jpg',
+    avatar: '/images/bagas.jpeg',
     content:
       'Pelayanan yang ramah dan profesional. Batik yang dibeli untuk seragam kantor mendapat respon positif dari semua karyawan. Recommended!',
     rating: 5,
@@ -123,7 +123,7 @@ onMounted(() => {
             <div class="flex-1 text-center sm:text-left">
               <div class="mb-3 sm:mb-4">
                 <span class="text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">
-                  TESTIMONIAL
+                  {{ testimonials[currentIndex].name }}
                 </span>
               </div>
 
