@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="faq" class="bg-gray-50 py-8 sm:py-12 md:py-16">
+  <section id="faq" class="py-8 sm:py-12 md:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
         <!-- Left Side - Header -->
@@ -104,14 +104,14 @@ onMounted(() => {
           <div
             v-for="(item, index) in faqItems"
             :key="item.id"
-            class="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md"
+            class="bg-white overflow-hidden transition-all duration-300 hover:shadow-md border-b-2 border-gray-200"
             :data-aos="'fade-up'"
             :data-aos-delay="200 + index * 100"
           >
             <!-- Question Header -->
             <button
               @click="toggleFaq(item.id)"
-              class="w-full px-4 py-4 sm:px-6 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-inset"
+              class="w-full px-4 py-4 sm:px-6 sm:py-8 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none"
             >
               <h3 class="text-base sm:text-lg font-semibold text-gray-900 pr-4 leading-tight">
                 {{ item.question }}
@@ -183,6 +183,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+body {
+  background-color: white;
+}
 /* Custom scrollbar for sticky content */
 @media (min-width: 1024px) {
   .lg\:sticky {
